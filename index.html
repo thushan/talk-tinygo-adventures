@@ -13,19 +13,51 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-markdown>
+					## IoT Adventures in TinyGo
+					Thushan Fernando
+					
+					![TinyGo logo](assets/tinygo-logo.png)
+				</section>
+				<section>
+					TinyGo is <strong>Go</strong> for <strong>Tiny</strong> Devices
+				</section>
+				<section>
 					
 				</section>
+				
 			</div>
 		</div>
 
 		<script src="engine/reveal.js"></script>
+		<script src="engine/plugin/chart/chart.min.js"></script>
+		<script src="engine/plugin/chart/plugin.js"></script>
+		<script src="engine/plugin/chalkboard/plugin.js"></script>
 		<script src="engine/plugin/notes/notes.js"></script>
 		<script src="engine/plugin/markdown/markdown.js"></script>
 		<script src="engine/plugin/highlight/highlight.js"></script>
 		<script>
 			Reveal.initialize({
 				hash: true,
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				chart: {
+					defaults: {
+						global: {
+							title: { fontColor: "#FFF" },
+							legend: {
+								labels: { fontColor: "#FFF" },
+							},
+						},
+						scale: {
+							scaleLabel: { fontColor: "#FFF" },
+							gridLines: { color: "#FFF", zeroLineColor: "#FFF" },
+							ticks: { fontColor: "#FFF" },
+						}
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ]},
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+				},
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChart, RevealChalkboard ]
 			});
 		</script>
 	</body>
