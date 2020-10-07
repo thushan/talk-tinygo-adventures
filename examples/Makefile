@@ -1,6 +1,6 @@
 
 # aliases
-.PHONY: clean flash-arduino-blink-ello build-arduino-blink-ello build-tinygo-comparison build-arduino-blink-bling flash-arduino-blink-bling
+.PHONY: clean build-tinygo-comparison flash-arduino-blink-ello build-arduino-blink-ello build-arduino-blink-bling flash-arduino-blink-bling flash-arduino-nano-blink-ello build-arduino-nano-blink-ello build-arduino-nano-blink-bling flash-arduino-nano-blink-bling
 
 clean:
 	mkdir -p build
@@ -22,3 +22,15 @@ flash-arduino-blink-bling:
 
 build-arduino-blink-bling:
 	tinygo build -target arduino -o build/blink-bling.hex blink-bling/main.go
+
+flash-arduino-nano-blink-ello:
+	tinygo flash -target arduino-nano -size short blink-ello/main.go
+
+build-arduino-nano-blink-ello:
+	tinygo build -target arduino-nano -o build/blink-ello.hex blink-ello/main.go
+
+flash-arduino-nano-blink-bling:
+	tinygo flash -target arduino-nano -size short -scheduler coroutines blink-bling/main.go
+
+build-arduino-nano-blink-bling:
+	tinygo build -target arduino-nano -o build/blink-bling.hex blink-bling/main.go
