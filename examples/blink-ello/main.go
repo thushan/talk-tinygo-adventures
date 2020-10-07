@@ -8,18 +8,17 @@ import (
 func main() {
 	led := machine.LED
 	led.Configure(machine.PinConfig{Mode: machine.PinOutput})
+
+	ledSwitch := true
+	print("Starting to blink...")
+
 	for {
-		led.Low()
-		time.Sleep(time.Millisecond * 1000)
 
-		led.High()
-		time.Sleep(time.Millisecond * 1000)
-		for i := 0; i < 5; i++ {
-			led.Low()
-			time.Sleep(time.Millisecond * 250)
+		led.Set(ledSwitch)
+		ledSwitch = !ledSwitch
 
-			led.High()
-			time.Sleep(time.Millisecond * 250)
-		}
+		println("Blinking for Voyager!")
+
+		time.Sleep(time.Millisecond * 500)
 	}
 }
