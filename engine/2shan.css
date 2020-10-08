@@ -1,0 +1,25 @@
+.highlight-1,
+.highlight-yellow {
+    color: rgb(255, 170, 0);
+}
+.highlight-2,
+.highlight-blue {    
+    color: rgb(0, 170, 255);
+}
+.highlight-3,
+.highlight-purple {    
+    color: rgb(128, 85, 196);
+} 
+.highlight-4,
+.highlight-pink {    
+    color: rgb(255, 0, 136);
+}
+.font-xlarge {
+    font-size: x-large
+}
+.table-data-align-center tbody tr td {
+    text-align: center;
+}
+.console-commands {
+    white-space: pre-line;
+}

@@ -1,64 +1,194 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>IoT Adventures with TinyGo</title>
-		<link rel="stylesheet" href="engine/reset.css">
-		<link rel="stylesheet" href="engine/reveal.css">
-		<link rel="stylesheet" href="engine/theme/black.css" id="theme">
-		<link rel="stylesheet" href="engine/plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section data-markdown>
-					## IoT Adventures in TinyGo
-					Thushan Fernando
-					
-					![TinyGo logo](assets/tinygo-logo.png)
-				</section>
-				<section>
-					TinyGo is <strong>Go</strong> for <strong>Tiny</strong> Devices
-				</section>
-				<section>
-					
-				</section>
-				
-			</div>
-		</div>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>IoT Adventures with TinyGo</title>
+	<link rel="stylesheet" href="engine/reset.css">
+	<link rel="stylesheet" href="engine/reveal.css">
+	<link rel="stylesheet" href="engine/2shan.css">
+	<link rel="stylesheet" href="engine/theme/black.css" id="theme">
+	<link rel="stylesheet" href="engine/plugin/highlight/monokai.css" id="highlight-theme">
+	<style>
+		.tinygo-blue 
+		{
+			color: #1B8BEB;
+		}
+		.golang-blue 
+		{
+			color: #00AED8;
+		}
+	</style>
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown>
+				## IoT Adventures in TinyGo
+				Thushan Fernando
 
-		<script src="engine/reveal.js"></script>
-		<script src="engine/plugin/chart/chart.min.js"></script>
-		<script src="engine/plugin/chart/plugin.js"></script>
-		<script src="engine/plugin/chalkboard/plugin.js"></script>
-		<script src="engine/plugin/notes/notes.js"></script>
-		<script src="engine/plugin/markdown/markdown.js"></script>
-		<script src="engine/plugin/highlight/highlight.js"></script>
-		<script>
-			Reveal.initialize({
-				hash: true,
-				chart: {
-					defaults: {
-						global: {
-							title: { fontColor: "#FFF" },
-							legend: {
-								labels: { fontColor: "#FFF" },
-							},
+				![TinyGo logo](assets/tinygo-logo.png)
+
+				[@thushanfernando](https://twitter.com/thushanfernando)
+
+				[github.com/thushan](https://github.com/thushan)
+			</section>
+			<section>
+				<p>TinyGo is <strong class="golang-blue">Go</strong> for <strong class="tinygo-blue">Tiny</strong> devices.</p>
+				<p>&nbsp;</p>
+				<p class="fragment">...also for WebAssembly (WASM) and CLI Tools.</p>
+				<p class="fragment fade-up">Thanks! Tiny Presentation! Questions?</p>
+				<p class="fragment fade-in-then-out">Just Joking!</p>
+			</section>
+			<section> <!-- What is Go? -->
+				<section>
+					<p><img src="assets/img/golang-gopher.png"></p>
+					<p>Don't know Go?</p>
+					<p class="fragment">Don't go! We'll cover it lightly.</p>
+				</section>
+				<section>
+					<p><strong class="golang-blue">Go</strong> was created by <span style="color: #4285F4;">G</span><span style="color: #DB4437;">o</span><span style="color: #F4B400;">o</span><span style="color: #4285F4;">g</span><span style="color: #0F9D58;">l</span><span style="color: #DB4437;">e</span> in 2007.</p>
+					<p class="fragment">
+						<img src="assets/img/go-authors.png"><br/>
+						By <strong>Robert Griesemer, Rob Pike & Ken Thompson</strong>...
+					</p>
+					<p class="fragment">...who disliked the <a href="https://talks.golang.org/2012/splash.article#:~:text=The%20goals%20of%20the%20Go,and%20maintain%E2%80%94large%20software%20systems.">chaos of C++ at Google.</a></p>
+					<p class="fragment"><strong>v1.0</strong> was released in 2012, latest is <a href="https://golang.org/doc/devel/release.html#go1.15">v1.15.2</a>.</p>
+				</section>
+				<section>					
+					<p> <h3>Features of Golang</h3>
+						<ul>
+							<li>statically typed, easy to follow language</li>
+							<li>extremely fast compilation</li>
+							<li>efficient execution on modern multicore systems</li>
+							<li>built-in concurrency & garbage collection</li>
+							<li>reliable dependency management - <code>go get</code></li>
+							<li>built in testing, profiling & race condition checking</li>
+							<li>opinionated - <code>GoDoc, gofmt</code></li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<h3>Simplest Go Program</h3>
+					<pre><code data-trim data-noescape class="language-go" data-line-numbers="1|2|3|4">
+							package main
+							import "fmt"
+							func main() {
+								fmt.Println("Hello Voyager!")
+							}
+						</code></pre>
+					<pre class="console-commands">
+					$ go run hello-voyager.go
+					> Hello Voyager!
+					</pre>	
+				</section>
+			</section>
+			<section> <!-- What is Tiny? -->
+				<section>
+					<p>What's Tiny then?</p>
+					<p class="fragment">
+						<img src="assets/img/raspberrypi-4.png">
+					</p>
+					<p class="fragment">...It's small, but we want Tiny.</p>
+				</section>
+				<section>
+
+				</section>
+			</section>
+
+			<section>
+				<h2>Common Hardware</h2>
+				<table class="font-xlarge table-data-align-center">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Arduino Uno</th>
+							<th>Arduino Nano</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Cores</th>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<th>CPU</th>
+							<td>ATmega32P</td>
+							<td>ATmega32P</td>
+						</tr>
+						<tr>
+							<th>Clock</th>
+							<td>16Mhz</td>
+							<td>16Mhz</td>
+						</tr>
+						<tr>
+							<th>Vinput</th>
+							<td>5v</td>
+							<td>5v</td>
+						</tr>
+						<tr>
+							<th>Analog IO</th>
+							<td>6</td>
+							<td>8</td>
+						</tr>
+						<tr>
+							<th>Digital IO / PWM</th>
+							<td>14/6</td>
+							<td>14/6</td>
+						</tr>							
+						<tr>
+							<th>EEPROM / SRAM (kb)</th>
+							<td>1.1</td>
+							<td>1.0</td>
+						</tr>				
+						<tr>
+							<th>Flash (kb)</th>
+							<td>1.1</td>
+							<td>1.0</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section data-markdown>
+
+			</section>
+
+		</div>
+	</div>
+
+	<script src="engine/reveal.js"></script>
+	<script src="engine/plugin/chart/chart.min.js"></script>
+	<script src="engine/plugin/chart/plugin.js"></script>
+	<script src="engine/plugin/chalkboard/plugin.js"></script>
+	<script src="engine/plugin/notes/notes.js"></script>
+	<script src="engine/plugin/markdown/markdown.js"></script>
+	<script src="engine/plugin/highlight/highlight.js"></script>
+	<script>
+		Reveal.initialize({
+			hash: true,
+			chart: {
+				defaults: {
+					global: {
+						title: { fontColor: "#FFF" },
+						legend: {
+							labels: { fontColor: "#FFF" },
 						},
-						scale: {
-							scaleLabel: { fontColor: "#FFF" },
-							gridLines: { color: "#FFF", zeroLineColor: "#FFF" },
-							ticks: { fontColor: "#FFF" },
-						}
 					},
-					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ]},
-					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
-					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
-					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+					scale: {
+						scaleLabel: { fontColor: "#FFF" },
+						gridLines: { color: "#FFF", zeroLineColor: "#FFF" },
+						ticks: { fontColor: "#FFF" },
+					}
 				},
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChart, RevealChalkboard ]
-			});
-		</script>
-	</body>
+				line: { borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"], "borderDash": [[5, 10], [0, 0]] },
+				bar: { backgroundColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
+				pie: { backgroundColor: [["rgba(0,0,0,.8)", "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"]] },
+				radar: { borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
+			},
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealChart, RevealChalkboard]
+		});
+	</script>
+</body>
+
 </html>
