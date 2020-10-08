@@ -39,3 +39,20 @@ a.learn-more:hover {
     color: rgb(170, 255, 0);
     border-bottom: dotted 1px rgb(170, 255, 0);
 }
+
+.console-window {
+    background: #212020;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(0,0,255,0.1); 
+    -moz-box-shadow: 0 0 5px rgba(255,255,255,0.1);
+    -webkit-box-shadow: 0 0 5px rgba(255,255,255,0.1);
+    box-shadow: 0px 0px 5px rgba(255,255,255,0.1);
+}
+.console-window pre {
+    background: #212020;
+    box-shadow: unset;
+    font-size: xx-large;
+    color: #c5c8c6;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+}

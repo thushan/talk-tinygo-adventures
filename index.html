@@ -38,7 +38,7 @@
 				<p>&nbsp;</p>
 				<p class="fragment">...also for WebAssembly (WASM) and CLI Tools.</p>
 				<p class="fragment fade-up">Thanks! Tiny Presentation! Questions?</p>
-				<p class="fragment fade-in-then-out">Just Joking!</p>
+				<p class="fragment fade-in-then-out"><em>Just Joking!</em></p>
 			</section>
 			<section> <!-- What is Go? -->
 				<section>
@@ -49,7 +49,7 @@
 				<section>
 					<p><strong class="golang-blue">Go</strong> was created by <span style="color: #4285F4;">G</span><span style="color: #DB4437;">o</span><span style="color: #F4B400;">o</span><span style="color: #4285F4;">g</span><span style="color: #0F9D58;">l</span><span style="color: #DB4437;">e</span> in 2007.</p>
 					<p class="fragment">
-						<img src="assets/img/go-authors.png"><br/>
+						<img src="assets/img/go-authors.jpg"><br/>
 						By <strong>Robert Griesemer, Rob Pike & Ken Thompson</strong>...
 					</p>
 					<p class="fragment">...who disliked the <a href="https://talks.golang.org/2012/splash.article#:~:text=The%20goals%20of%20the%20Go,and%20maintain%E2%80%94large%20software%20systems." class="learn-more">chaos of C++ at Google</a>.</p>
@@ -118,10 +118,11 @@
 					</p>
 				</section>
 				<section>
-					<h3>ESP32 / ESP8266</h3>					
+					<h3>ESP8266 / ESP32</h3>					
 					<p>
-						<img src="assets/img/tinygo-esp32-ledstrip.gif"> <img src="assets/img/esp8266.png">
+						<img src="assets/img/esp8266.png"> <img src="assets/img/tinygo-esp32-ledstrip.gif">
 					</p>
+					<p class="fragment">...Boring? But wait...</p>
 				</section>
 				<section>
 					<h3>Gameboy Advance</h3>					
@@ -132,7 +133,7 @@
 				<section>
 					<h3>Nintendo Switch</h3>					
 					<p>
-						<img src="assets/img/tinygo-nintendo-switch.gif">
+						<img src="assets/img/tinygo-nintendo-switch.gif"> <img src="assets/img/geoff-polzin.png">
 					</p>
 				</section>
 				<section>
@@ -234,9 +235,39 @@
 					<p class="fragment">Every tiny bit counts!</p>
 				</section>
 			</section>
+			<section> <!-- TinyGo -->
+				<section>
+					<h3>So Back to TinyGo</h3>
+					<p class="fragment">Created by <a href="https://aykevl.nl/" class="learn-more">Ayke van Laëthem</a>!</p>
+					<p class="fragment">It's an LLVM based Compiler</p>
+					<p class="fragment">Supports a <a href="https://tinygo.org/lang-support/" class="learn-more">subset of Go</a> language & <a href="https://tinygo.org/compiler-internals/datatypes/" class="learn-more">data types</a></p>
+					<p class="fragment">And a smaller set of <a href="https://tinygo.org/lang-support/stdlib/" class="learn-more">standard packages</a></p>
+					<p class="fragment">To make lean binaries to fit into tiny devices</p>
+				</section>
+				<section>
+					<h3>How Tiny Are We Talking?</h3>
+					<img src="assets/img/arrested-development-tinytown.jpg">
+					<p class="fragment">Let's find out...</p>					
+				</section>
+				<section>
+					<h3><span class="golang-blue">Go</span> vs <span class="tinygo-blue">TinyGo</span> Binary Size</h3>
+					<pre><code data-trim data-noescape class="language-go">
+						package main
 
-			<section data-markdown>
-
+						func main() {
+							println("Hello Voyager!")
+						}
+					</code></pre>
+					
+					<pre class="console-commands highlight-yellow">$ make build-tinygo-comparison
+					</pre>
+					<pre class="console-commands fragment">1.1M build/hello-voyager_golang
+					21K  build/hello-voyager_tinygo
+					</pre>
+					<p class="fragment">
+						<img src="assets/img/memes/chris-pratt-omg.gif">
+					</p>
+				</section>
 			</section>
 
 		</div>
