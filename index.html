@@ -237,6 +237,14 @@
 			</section>
 			<section> <!-- TinyGo -->
 				<section>
+					<h3>So I can Go on Tiny Devices?</h3>
+					<p class="fragment">Go was <span class="highlight-pink">designed for speed</span>, not size.</p>
+					<p class="fragment">
+						<img src="assets/img/vb6-compile-for-speed-vs-small.gif">
+					</p>
+					<p class="fragment">We need something <span class="highlight-green">optimised for size</span>.</p>
+				</section>
+				<section>
 					<h3>So Back to TinyGo</h3>
 					<p class="fragment">Created by <a href="https://aykevl.nl/" class="learn-more">Ayke van Laëthem</a>!</p>
 					<p class="fragment">It's an LLVM based Compiler</p>
@@ -245,6 +253,8 @@
 					<p class="fragment">To make lean binaries to fit into tiny devices</p>
 					<p class="fragment">And binaries for Linux, WASM & one-day Windows!</p>
 				</section>
+			</section>
+			<section>				
 				<section>
 					<h3>How Tiny Are We Talking?</h3>
 					<img src="assets/img/arrested-development-tinytown.jpg">
@@ -270,7 +280,60 @@
 					</p>
 				</section>
 			</section>
+			</section>
+			<section>
+				<h3>What is this voodoo magic?</h3>				
+				<p class="fragment">
+					<img src="assets/img/tinygo-compiler.png">
 
+				</p>
+				<p class="fragment">TinyGo relies on the existing Go toolchain</p>
+				<p class="fragment">After the <a href="https://github.com/golang/go/blob/master/src/cmd/compile/internal/ssa/README.md" class="learn-more">Go SSA</a> phase, it has a <em>go</em> at trimming</p>
+				<p class="fragment">Prunes & optimises for target architecture</p>
+			</section>
+			<section><!-- Get Started -->
+				<section>
+					<h3>Let's Get Started</h3>
+					<h5>Windows</h5>
+					<pre class="console-commands highlight-yellow">
+						$ scoop install tinygo
+					</pre>
+					<h5>Mac</h5>
+					<pre class="console-commands highlight-yellow">
+					$ brew tap  tinygo-org/tools
+					$ brew install tinygo
+					</pre>
+					<h5>Linux</h5>
+					<pre class="console-commands highlight-yellow">
+						$ wget https://github.com/tinygo-org/tinygo/releases/download/v0.15.0/tinygo_0.15.0_amd64.deb
+						$ sudo dpkg -i tinygo_0.15.0_amd64.deb
+					</pre>
+				</section>
+				<section>
+					<h3>Let's also install <code>avr-dude</code></h3>
+					Programs our Arduino Atmel AVR MCU. <br/> <br/>
+					<h5>Windows</h5>
+					<pre class="console-commands highlight-yellow">
+						$ scoop install avr-dude
+					</pre>
+					<h5>Mac</h5>
+					<pre class="console-commands highlight-yellow">
+						$ brew install avrdude
+					</pre>
+					<h5>Linux</h5>
+					<pre class="console-commands highlight-yellow">
+						$ sudo apt-get install gcc-avr avr-libc avrdude
+					</pre>
+				</section>
+				<section>
+					<h3>One more thing on Windows...</h3>
+					<h5>Windows</h5>
+					<pre class="console-commands highlight-yellow">
+						$ choco install make
+					</pre>
+					<p class="fragment">There's a joke in there somewhere...</p>
+				</section>
+			</section>			
 		</div>
 	</div>
 
