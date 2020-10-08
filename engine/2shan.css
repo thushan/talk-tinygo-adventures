@@ -14,6 +14,14 @@
 .highlight-pink {    
     color: rgb(255, 0, 136);
 }
+.highlight-5,
+.highlight-orange {
+    color: rgb(249, 145, 87);
+}
+.highlight-6,
+.highlight-green {
+    color: #2fd15a;
+}
 .font-xlarge {
     font-size: x-large
 }
@@ -22,4 +30,12 @@
 }
 .console-commands {
     white-space: pre-line;
+}
+
+a.learn-more {
+    color: rgb(170, 255, 0);
+}
+a.learn-more:hover {
+    color: rgb(170, 255, 0);
+    border-bottom: dotted 1px rgb(170, 255, 0);
 }

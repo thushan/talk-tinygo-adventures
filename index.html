@@ -6,9 +6,9 @@
 	<title>IoT Adventures with TinyGo</title>
 	<link rel="stylesheet" href="engine/reset.css">
 	<link rel="stylesheet" href="engine/reveal.css">
-	<link rel="stylesheet" href="engine/2shan.css">
 	<link rel="stylesheet" href="engine/theme/black.css" id="theme">
 	<link rel="stylesheet" href="engine/plugin/highlight/monokai.css" id="highlight-theme">
+	<link rel="stylesheet" href="engine/2shan.css">
 	<style>
 		.tinygo-blue 
 		{
@@ -52,7 +52,7 @@
 						<img src="assets/img/go-authors.png"><br/>
 						By <strong>Robert Griesemer, Rob Pike & Ken Thompson</strong>...
 					</p>
-					<p class="fragment">...who disliked the <a href="https://talks.golang.org/2012/splash.article#:~:text=The%20goals%20of%20the%20Go,and%20maintain%E2%80%94large%20software%20systems.">chaos of C++ at Google.</a></p>
+					<p class="fragment">...who disliked the <a href="https://talks.golang.org/2012/splash.article#:~:text=The%20goals%20of%20the%20Go,and%20maintain%E2%80%94large%20software%20systems." class="learn-more">chaos of C++ at Google</a>.</p>
 					<p class="fragment"><strong>v1.0</strong> was released in 2012, latest is <a href="https://golang.org/doc/devel/release.html#go1.15">v1.15.2</a>.</p>
 				</section>
 				<section>					
@@ -82,74 +82,159 @@
 					> Hello Voyager!
 					</pre>	
 				</section>
+				<section>
+					<h3>Take a...</h3>
+					<p><img src="assets/img/animated-gopher.gif" width="400" height="400"> </p>
+					<p><a href="https://tour.golang.org/welcome/1" class="learn-more">Tour of Go...</a></p>
+				</section>
 			</section>
 			<section> <!-- What is Tiny? -->
 				<section>
-					<p>What's Tiny then?</p>
+					<h3>What's Tiny then?</h3>
 					<p class="fragment">
 						<img src="assets/img/raspberrypi-4.png">
 					</p>
 					<p class="fragment">...It's small, but we want Tiny.</p>
 				</section>
 				<section>
-
+					<h3>Devices like...</h3>
+				</section>
+				<section>					
+					<h3>Arduino Uno / Nano</h3>
+					<p>
+						<img src="assets/img/arduino-uno.png"> <img src="assets/img/arduino-nano.png">
+					</p>					
+				</section>
+				<section>					
+					<h3>Arduino Nano 33 - IoT | BLE | Sense</h3>
+					<p>
+						<img src="assets/img/arduino-nano-33-iot.jpg"> <img src="assets/img/arduino-nano-33-ble.jpg"> <img src="assets/img/arduino-nano-33-ble-sense.jpg">
+					</p>					
+				</section>
+				<section>
+					<h3>Teensy</h3>					
+					<p>
+						<img src="assets/img/teensy3.2.png">
+					</p>
+				</section>
+				<section>
+					<h3>ESP32 / ESP8266</h3>					
+					<p>
+						<img src="assets/img/tinygo-esp32-ledstrip.gif"> <img src="assets/img/esp8266.png">
+					</p>
+				</section>
+				<section>
+					<h3>Gameboy Advance</h3>					
+					<p>
+						<img src="assets/img/tinygo-gameboy-advance.gif">
+					</p>
+				</section>
+				<section>
+					<h3>Nintendo Switch</h3>					
+					<p>
+						<img src="assets/img/tinygo-nintendo-switch.gif">
+					</p>
+				</section>
+				<section>
+					<h2>Tiny Devices</h2>
+					<table class="font-xlarge table-data-align-center">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Arduino Uno</th>
+								<th>Arduino Nano</th>
+								<th>33 IoT</th>
+								<th>33 BLE</th>
+								<th>33 BLE Sense</th>
+								<th>Teensy v4</th>
+								<th>ESP8266</th>
+								<th>ESP32</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Controller</th>
+								<td>ATmega32P</td>
+								<td>ATmega32P</td>
+								<td>SAMD21</td>
+								<td>nRF52840</td>
+								<td>nRF52840</td>
+								<td>CortexM4</td>
+								<td>L106</td>
+								<td>XtensaLX6</td>
+							</tr>
+							<tr>
+								<th>Type</th>
+								<td>8-bit</td>
+								<td>8-bit</td>
+								<td>32-bit</td>
+								<td>32-bit</td>
+								<td>32-bit</td>
+								<td>32-bit</td>
+								<td>32-bit</td>
+								<td>32-bit</td>
+							</tr>
+							<tr>
+								<th>Instructions</th>
+								<td>AVR</td>
+								<td>AVR</td>
+								<td>ARM</td>
+								<td>ARM</td>
+								<td>ARM</td>
+								<td>ARM</td>
+								<td>AT</td>
+								<td>ULP</td>
+							</tr>
+							<tr>
+								<th>Cores</th>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<th>Clock</th>
+								<td>16Mhz</td>
+								<td>16Mhz</td>
+								<td>48Mhz</td>
+								<td>64Mhz</td>
+								<td>64Mhz</td>
+								<td class="highlight-green">600Mhz</td>
+								<td>80Mhz</td>
+								<td>160Mhz</td>
+							</tr>						
+							<tr>
+								<th>EEPROM / SRAM (kb)</th>
+								<td>1.1</td>
+								<td>1.0</td>
+								<td>32</td>
+								<td>256</td>
+								<td>256</td>
+								<td>1024</td>
+								<td>64</td>
+								<td>520</td>
+							</tr>				
+							<tr>
+								<th>Flash (kb)</th>
+								<td>1.1</td>
+								<td>1.0</td>
+								<td>256</td>
+								<td>1024</td>
+								<td>1024</td>
+								<td>2048</td>
+								<td>4096</td>
+								<td>4096</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="fragment">Every tiny bit counts!</p>
 				</section>
 			</section>
 
-			<section>
-				<h2>Common Hardware</h2>
-				<table class="font-xlarge table-data-align-center">
-					<thead>
-						<tr>
-							<th></th>
-							<th>Arduino Uno</th>
-							<th>Arduino Nano</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th>Cores</th>
-							<td>1</td>
-							<td>1</td>
-						</tr>
-						<tr>
-							<th>CPU</th>
-							<td>ATmega32P</td>
-							<td>ATmega32P</td>
-						</tr>
-						<tr>
-							<th>Clock</th>
-							<td>16Mhz</td>
-							<td>16Mhz</td>
-						</tr>
-						<tr>
-							<th>Vinput</th>
-							<td>5v</td>
-							<td>5v</td>
-						</tr>
-						<tr>
-							<th>Analog IO</th>
-							<td>6</td>
-							<td>8</td>
-						</tr>
-						<tr>
-							<th>Digital IO / PWM</th>
-							<td>14/6</td>
-							<td>14/6</td>
-						</tr>							
-						<tr>
-							<th>EEPROM / SRAM (kb)</th>
-							<td>1.1</td>
-							<td>1.0</td>
-						</tr>				
-						<tr>
-							<th>Flash (kb)</th>
-							<td>1.1</td>
-							<td>1.0</td>
-						</tr>
-					</tbody>
-				</table>
-			</section>
 			<section data-markdown>
 
 			</section>
