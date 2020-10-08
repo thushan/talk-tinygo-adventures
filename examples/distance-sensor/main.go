@@ -14,6 +14,6 @@ func main() {
 	for {
 		println("Distance: ", sensor.ReadDistance(), "mm")
 		println("Pulse: ", sensor.ReadPulse(), "ms")
-		time.Sleep(time.Millisecond * 250)
+		time.Sleep(250 * time.Millisecond)
 	}
 }

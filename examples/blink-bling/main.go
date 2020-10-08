@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	go blinkOnboardLed()
+	blinkOnboardLed()
 	blinkLed()
 }
 
@@ -16,17 +16,17 @@ func blinkLed() {
 
 	for {
 		led.Low()
-		time.Sleep(time.Millisecond * 1000)
+		time.Sleep(1 * time.Second)
 
 		led.High()
-		time.Sleep(time.Millisecond * 1000)
+		time.Sleep(1 * time.Second)
 
 		for i := 0; i < 5; i++ {
 			led.Low()
-			time.Sleep(time.Millisecond * 250)
+			time.Sleep(250 * time.Millisecond)
 
 			led.High()
-			time.Sleep(time.Millisecond * 250)
+			time.Sleep(250 * time.Millisecond)
 		}
 	}
 }
@@ -42,6 +42,6 @@ func blinkOnboardLed() {
 		led.Set(ledSwitch)
 		ledSwitch = !ledSwitch
 
-		time.Sleep(time.Millisecond * 500)
+		time.Sleep(500 * time.Millisecond)
 	}
 }
