@@ -104,12 +104,18 @@
 					<p>
 						<img src="assets/img/arduino-uno.png"> <img src="assets/img/arduino-nano.png">
 					</p>					
+					<p>
+						Read the <a href="https://core-electronics.com.au/tutorials/history-of-arduino.html" class="learn-more">History of Arduino</a>
+					</p>
 				</section>
 				<section>					
 					<h3>Arduino Nano 33 - IoT | BLE | Sense</h3>
 					<p>
 						<img src="assets/img/arduino-nano-33-iot.jpg"> <img src="assets/img/arduino-nano-33-ble.jpg"> <img src="assets/img/arduino-nano-33-ble-sense.jpg">
-					</p>					
+					</p>
+					<p>
+						Newest, most powerful Arduino for Modern IoT makers.
+					</p>			
 				</section>
 				<section>
 					<h3>Teensy</h3>					
@@ -334,11 +340,167 @@
 					<p class="fragment">There's a joke in there somewhere...</p>
 				</section>
 			</section>
-			<section> <!-- Examples -->
+			<section> <!-- Examples Prep -->
 				<section>
-					
+					<h3>Let's see some examples</h3>
+					<p>First how the examples are structured:</p>
+					<p>
+						<pre>
+├── /_build
+├── /blink-bling
+│   └── main.go
+├── /blink-ello
+│   └── main.go
+├── /distance-sensor
+│   └── main.go
+├── /go-compare
+│   └── main.go
+├── /temp-sensor
+|   └── main.go
+├── Makefile
+├── go.mod
+├── go.sum
+└── platformio.ini
+						</pre>
+					</p>
+					<p>Let's <code class="highlight-blue">make</code> them work.</p>
 				</section>
-			</section>	
+				<section>
+					<h3>Make makes it easy</h3>
+					<p>All examples have a <code class="highlight-blue">make</code> target.</p>
+					<p>
+						<pre class="console-commands highlight-yellow">
+							$ make build-arduino-blink-ello
+							$ make flash-arduino-blink-ello
+						</pre>
+					</p>
+					<p>Another target to clean our build artefacts.</p>					
+					<p>
+						<pre class="console-commands highlight-yellow">
+							$ make clean
+						</pre>
+					</p>
+					<p>Easy to present, easy to try later.</p>
+				</section>
+			</section>
+			<section> <!-- Example: Blinky-->
+				<section>
+					<h3>Arduino Target Examples</h3>
+					<p>Our <span class="highlight-green">Target</span> board is Arduino based.</p>
+					<p class="fragment">Widely used, based on the <code>AVR</code> Instruction set</p>
+					<p class="fragment">That's why we installed <code>avr-dude</code> earlier.</p>
+					<p class="fragment">Let's look at <a href="https://tinygo.org/microcontrollers/arduino-uno/" class="learn-more">Arduino Uno</a> support.</p>
+				</section>
+				<section>
+					<h3>Token Hello World</h3>
+					<p>Let's make something blink - <code class="highlight-purple">blink-ello</code>.</p>
+					<p>
+						<img src="assets/img/arduino-blink.gif">
+					</p>
+					<p>
+						<pre class="console-commands highlight-yellow">
+							$ make build-arduino-blink-ello
+							$ make flash-arduino-blink-ello
+						</pre>
+					</p>
+					<p class="fragment">
+						<img src="assets/img/memes/overacting-omg.gif">
+					</p>
+				</section>
+				<section>
+					<h3>Machine Package</h3>
+					<p>This is the Hardware Abstraction Layer in TinyGo</p>
+					<p class="fragment">Defines all our board hardware - pins, buses, sensors</p>
+					<p class="fragment">Let's look at <a href="https://tinygo.org/microcontrollers/machine/arduino/" class="learn-more">Arduino Machine</a> specifications.</p>
+				</section>
+			</section>
+			<section> <!-- Blinky Bling -->
+				<section>
+					<h3>Blink with some Bling</h3>
+					<p>Let's make something blink - <code class="highlight-purple">blink-bling</code>.</p>
+					<p>
+						<img src="assets/img/examples/blink-bling.png">
+					</p>
+					<p>
+						<pre class="console-commands highlight-yellow">
+							$ make flash-arduino-blink-bling
+						</pre>
+					</p>
+					<p class="fragment">
+						<img src="assets/img/memes/get-out-seinfeld.gif">
+					</p>
+				</section>
+				<section>
+					<h3>Go routines in TinyGo</h3>
+					<p>...are a big thing!</p>
+					<p class="fragment">We specified a scheduler when flashing</p>
+					<p>
+						<pre class="console-commands highlight-yellow">
+							$ tinygo flash -target arduino -scheduler coroutines ...
+						</pre>
+					</p>
+					<p class="fragment">
+						Which does the hard work of concurrency
+					</p>
+					<p class="fragment">
+						Well supported on <code>ARCM</code>, still improving on <code>AVR</code>.
+					</p>
+					<p class="fragment">
+						Opens up a whole host of new ideas.
+					</p>
+				</section>
+			</section>
+			<section> <!-- Temp Sensor -->
+				<section>
+					<h3>Using Drivers in TinyGo</h3>
+					<p>Let's use the <a href="https://www.adafruit.com/product/2652" class="learn-more">BME280</a> sensor - <code class="highlight-purple">temp-sensor</code>.</p>
+					<p>
+						<pre class="console-commands highlight-yellow">
+							$ make flash-arduino-temp-sensor
+						</pre>
+					</p>
+					<p class="fragment">
+						<img src="assets/img/examples/BME280-Arduino-Schematic.png">
+					</p>
+					<p>Gives us Temperature, Humidity & Altitude.</p>
+				</section>
+				<section>
+					<h3>Drivers Package</h3>
+					<p>Drivers are a go module.</p>
+					<p>
+						<pre class="console-commands highlight-yellow">
+							$ go get tinygo.org/x/drivers
+						</pre>
+					</p>
+					<p class="fragment">
+						There's a host of common devices supported already. <br/>
+						Sensors, LEDs/Smart Displays, RTCs, GPS.
+					</p>
+					<p class="fragment">
+						Take a look at <a href="https://tinygo.org/microcontrollers/drivers/" class="learn-more">Supported Hardware Devices</a>(53).
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>TinyGo is still maturing</h3>
+					<p class="fragment">
+						There's still a few things to implement in TinyGo.
+					</p>
+					<p class="fragment">
+						It's a good way to learn Go
+					</p>					
+				</section>
+				<section>
+					<h3>Slides, Resources etc</h3>
+					<p>
+						<a href="https://github.com/thushan">github.com/thushan/talk-tinygo-adventures</a>
+					</p>
+					<p class="fragment">
+						Thanks! Questions?
+					</p>
+				</section>
+			</section>
 		</div>
 	</div>
 

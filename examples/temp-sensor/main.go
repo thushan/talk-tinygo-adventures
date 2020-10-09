@@ -11,7 +11,7 @@ import (
 func main() {
 
 	machine.I2C0.Configure(machine.I2CConfig{
-		Frequency: machine.TWI_FREQ_400KHZ,
+		// Frequency: machine.TWI_FREQ_400KHZ,
 	})
 
 	sensor := bme280.New(machine.I2C0)
