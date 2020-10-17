@@ -19,6 +19,6 @@ func main() {
 
 		println("Blinking for Voyager!")
 
-		time.Sleep(500 * time.Millisecond)
+		time.Sleep(1000 * time.Millisecond)
 	}
 }

@@ -39,7 +39,9 @@ a.learn-more:hover {
     color: rgb(170, 255, 0);
     border-bottom: dotted 1px rgb(170, 255, 0);
 }
-
+a.learn-code {
+    font-family: 'Courier New', Courier, monospace;
+}
 .console-window {
     background: #212020;
     border-top: 1px solid rgba(255,255,255,0.1);

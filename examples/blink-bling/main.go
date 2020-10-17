@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	blinkOnboardLed()
+	go blinkOnboardLed()
 	blinkLed()
 }
 
